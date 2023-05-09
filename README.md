@@ -1,16 +1,16 @@
 # 266Project
 
-##To run:
+## To run:
 first run npm i to install all dependencies
 
 
-##frontend: 
+## frontend: 
 
 cd client
 
 npm start
 
-##backend:
+## backend:
 
 cd server
 

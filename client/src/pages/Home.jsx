@@ -75,10 +75,22 @@ function Home() {
       return;
     }
 
-    const filteredData = parsedData.filter((item) =>
-      dayjs(item.date).isSame(date, "day")
-    );
-    setData(filteredData);
+    let searchUrl = baseUrl+'/searchbydate?q=${searchQuery}'
+    searchUrl = searchUrl.replace("${searchQuery}", date)
+    console.log(searchUrl)
+    axios.get(searchUrl)
+      .then(response => {
+        // console.log("Recieved response")
+        // console.log(response.data)
+        setData(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    // const filteredData = parsedData.filter((item) =>
+    //   dayjs(item.date).isSame(date, "day")
+    // );
+    // setData(filteredData);
     // const filteredData = parsedData.filter((item) => item.date.includes(date));
     // setData(filteredData);
   };

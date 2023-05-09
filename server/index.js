@@ -50,6 +50,13 @@ app.get('/search', (req, res) => {
     res.send(filteredData);
 });
 
+app.get('/searchbydate', (req, res) => {
+    console.log(req.query)
+    searchValue = req.query.q
+    
+    res.send(rawData);
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });

@@ -1,18 +1,13 @@
-# 266Project
+# Historical Events Search
 
 ## To run:
-first run npm i to install all dependencies
-
 
 ## frontend: 
-
 cd client
-
-npm start
+npm install && npm start
 
 ## backend:
-
 cd server
-
-node server.js
+cd client
+npm install && nodemon server.js
 

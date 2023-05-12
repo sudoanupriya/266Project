@@ -11,3 +11,6 @@ cd server
 cd client
 npm install && nodemon server.js
 
+#Mongodump file
+
+server/dump

@@ -1,6 +1,3 @@
-
-// server.js
-
 const express = require('express');
 const cors = require('cors');
 
@@ -42,13 +39,45 @@ app.get('/hello', (req, res) => {
 });
 
 app.get('/search', (req, res) => {
-    console.log(req.query)
-    searchValue = req.query.q
-    const filteredData = rawData.filter((item) =>
-      item.title.toLowerCase().includes(searchValue.toLowerCase())
-    );
-    res.send(filteredData);
+  console.log(req.query)
+  const {q, date, ad} = req.query;
+  console.log(q,date,ad);
+
+  // searchValue = req.query.q
+  // const filteredData = rawData.filter((item) =>
+  //   item.title.toLowerCase().includes(searchValue.toLowerCase())
+  // );
+  // res.send(filteredData);
+  res.send(rawData).status(200);
 });
+
+app.get('/searchRecommendation', (req, res) => {
+  console.log(req.query);
+  const data ={
+    data: [
+      { label: 'hello', value: '1' },
+      { label: 'codesandbox', value: '2' },
+      { label: 'react', value: '3' },
+      { label: 'nodejs', value: '4' },
+      { label: 'java', value: '5' },
+      { label: 'antd', value: '6' },
+      { label: 'dependency', value: '7' },
+      { label: 'less', value: '8' },
+    ]
+  }
+  /**Implement autocomplete feature */
+  res.send(data).status(200);
+})
+
+
+// app.get('/search', (req, res) => {
+//     console.log(req.query)
+//     searchValue = req.query.q
+//     const filteredData = rawData.filter((item) =>
+//       item.title.toLowerCase().includes(searchValue.toLowerCase())
+//     );
+//     res.send(filteredData);
+// });
 
 app.get('/searchbydate', (req, res) => {
     console.log(req.query)

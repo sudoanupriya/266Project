@@ -5,7 +5,7 @@ const Menu = () => {
   const items = [
     {
       label:
-        "Team 6 - Project Name goes here",
+        "Team 6 - Historical Events Search",
       key: "team6",
       icon: <HomeOutlined />,
     },

@@ -13,4 +13,4 @@ npm install && nodemon server.js
 
 #Mongodump file
 
-server/dump
+server/dump.zip
